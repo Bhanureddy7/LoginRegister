@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-4 text-center">Register</h3>
+
+                    <form method="post" asp-action="Register">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="Username" placeholder="Username" required />
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="Email" placeholder="Email" required />
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="Password" placeholder="Password" required />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </div>
+                    </form>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                    }
+
+                    <div class="text-center mt-3">
+                        <a href="/Account/Login">Already have an account? Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
